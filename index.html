@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Himanshu Sain, Full Stack Developer">
+<meta property="og:description" content="Laravel, Flutter and Node developer building EV charging, battery swapping and SaaS platforms. Jaipur, India.">
+<meta property="og:image" content="shots/ecstore.jpg">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Himanshu Sain</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Himanshu Sain — Full Stack Developer (Laravel, Flutter, Node.js) building EV charging, battery swapping and SaaS platforms. Jaipur, India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: two columns — sticky identity + nav on the left, scrolling record of work on the right; stacks on phones. */
+:root{
+  --bg:#F3F5F4;
+  --surface:#FFFFFF;
+  --ink:#14201D;
+  --muted:#56635F;
+  --line:#D9E0DD;
+  --accent:#1D4ED8;
+  --accent-soft:#E3EAFC;
+  --live:#0F8A5F;
+  --display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1315; --surface:#141C1F; --ink:#E4ECE9; --muted:#93A29D; --line:#24312E;
+    --accent:#8AAEFF; --accent-soft:#1A2643; --live:#3DD39A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1315; --surface:#141C1F; --ink:#E4ECE9; --muted:#93A29D; --line:#24312E;
+  --accent:#8AAEFF; --accent-soft:#1A2643; --live:#3DD39A; color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:var(--body); font-size:16px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+::selection{background:var(--accent-soft)}
+
+.shell{
+  max-width:1180px; margin:0 auto;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:64px;
+}
+
+/* ---------- Left column ---------- */
+.side{
+  position:sticky; top:env(safe-area-inset-top, 0px);
+  height:100vh; padding-block:88px 56px;
+  display:flex; flex-direction:column; gap:40px;
+}
+.side-top{display:flex;flex-direction:column;gap:14px}
+.status{
+  display:inline-flex; align-items:center; gap:10px; align-self:flex-start;
+  font-family:var(--mono); font-size:12.5px; color:var(--muted);
+  border:1px solid var(--line); background:var(--surface);
+  padding:6px 12px; border-radius:999px;
+}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--live);box-shadow:0 0 0 0 var(--live);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--live) 55%,transparent)}70%,100%{box-shadow:0 0 0 9px transparent}}
+.status b{color:var(--ink);font-weight:500}
+h1{
+  font-family:var(--display); font-weight:800; letter-spacing:-.025em;
+  font-size:clamp(44px, 5.4vw, 64px); line-height:1; margin:10px 0 0;
+}
+.role{font-family:var(--display);font-weight:500;font-size:21px;margin:0;letter-spacing:-.01em}
+.pitch{color:var(--muted);max-width:34ch;margin:4px 0 0;text-wrap:pretty}
+
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+nav a{
+  display:flex; align-items:center; gap:14px; text-decoration:none;
+  font-family:var(--mono); font-size:12.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--muted); padding:8px 0;
+}
+nav a .bar{display:block;height:1px;width:32px;background:currentColor;transition:width .25s ease, background .25s}
+nav a:hover, nav a.on{color:var(--ink)}
+nav a:hover .bar, nav a.on .bar{width:64px;background:var(--accent)}
+
+.side-foot{margin-top:auto;display:flex;flex-direction:column;gap:10px;font-size:14px}
+.side-foot .row{display:flex;flex-wrap:wrap;gap:8px 18px}
+.side-foot a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.side-foot a:hover{color:var(--accent);border-color:var(--accent)}
+.where{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+
+/* ---------- Right column ---------- */
+main{padding-block:88px 96px;display:flex;flex-direction:column;gap:104px;min-width:0}
+section{scroll-margin-top:32px;display:flex;flex-direction:column;gap:28px}
+.eyebrow{
+  font-family:var(--mono); font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); margin:0; display:flex; align-items:center; gap:12px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+h2{font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.02em;line-height:1.15;margin:0;text-wrap:balance}
+h3{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.01em;line-height:1.25;margin:0;text-wrap:balance}
+p{margin:0;max-width:65ch;text-wrap:pretty}
+.lede{font-size:18px}
+.muted{color:var(--muted)}
+strong{font-weight:600}
+
+/* Facts strip */
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fact{padding:18px 16px 16px 0;display:flex;flex-direction:column;gap:2px}
+.fact + .fact{border-left:1px solid var(--line);padding-left:20px}
+.fact .n{font-family:var(--display);font-weight:800;font-size:34px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
+.fact .l{font-size:13.5px;color:var(--muted)}
+
+/* OCPP log — the domain detail */
+.log{
+  font-family:var(--mono); font-size:13px; line-height:1.75;
+  background:var(--surface); border:1px solid var(--line); border-radius:10px;
+  padding:16px 18px; overflow-x:auto; white-space:pre; color:var(--muted);
+}
+.log .t{color:var(--muted);opacity:.7}
+.log .k{color:var(--accent)}
+.log .ok{color:var(--live)}
+.log .v{color:var(--ink)}
+.cap{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:-18px}
+
+/* Experience */
+.jobs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.job{
+  display:grid; grid-template-columns:132px minmax(0,1fr); gap:20px;
+  padding:22px 20px; margin:0 -20px; border-radius:12px;
+  transition:background .2s;
+}
+.job:hover{background:var(--surface)}
+.when{font-family:var(--mono);font-size:12.5px;color:var(--muted);padding-top:4px;font-variant-numeric:tabular-nums;line-height:1.5}
+.job-body{display:flex;flex-direction:column;gap:10px;min-width:0}
+.co{color:var(--muted);font-weight:500;font-size:15px;margin-top:-6px}
+.job ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:15.5px}
+.job li::marker{color:var(--accent)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:2px 0 0;padding:0}
+.tags li{
+  font-family:var(--mono); font-size:12px; color:var(--accent);
+  background:var(--accent-soft); padding:4px 10px; border-radius:999px;
+}
+
+/* Projects */
+.projects{display:flex;flex-direction:column;gap:20px}
+.proj{
+  background:var(--surface); border:1px solid var(--line); border-radius:14px;
+  padding:26px 26px 24px; display:flex; flex-direction:column; gap:14px;
+  transition:border-color .2s, transform .2s;
+}
+.proj:hover{border-color:color-mix(in srgb,var(--accent) 50%,var(--line));transform:translateY(-2px)}
+.proj-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.domain{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.cs{display:grid;grid-template-columns:96px minmax(0,1fr);gap:8px 16px;font-size:15.5px;margin:0}
+.cs dt{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.cs dd{margin:0}
+.readings{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
+.readings b{color:var(--ink);font-weight:500}
+
+.shot{margin:0;display:flex;flex-direction:column;gap:6px}
+.shot a{display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden;aspect-ratio:16/9;max-width:100%;background:var(--bg)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s ease}
+.shot a:hover img{transform:scale(1.02)}
+.shot figcaption{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.mini .shot a{aspect-ratio:16/8}
+.proj-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;margin-top:-4px;font-size:14px}
+.role-chip{font-family:var(--mono);font-size:12px;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.live{font-family:var(--mono);font-size:12.5px;color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--live)}
+.live:hover{text-decoration:underline}
+.group-h{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:12px 0 -8px}
+.mini .live{font-size:12px}
+.mini-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;margin-top:auto;padding-top:4px}
+.more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.mini{border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.mini h4{font-family:var(--display);font-weight:700;font-size:16.5px;margin:0}
+.mini p{font-size:14.5px;color:var(--muted)}
+.mini .stack{font-family:var(--mono);font-size:12px;color:var(--accent)}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--line)}
+.sk{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.sk dt{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sk dd{margin:0;font-size:15.5px}
+
+/* Education */
+.edu{display:flex;flex-direction:column;gap:10px}
+.edu-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.edu-row span:last-child{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* Contact */
+.contact-card{
+  background:var(--ink); color:var(--bg); border-radius:16px; padding:32px;
+  display:flex; flex-direction:column; gap:20px;
+}
+.contact-card h2{color:var(--bg)}
+.contact-card p{color:color-mix(in srgb,var(--bg) 78%,var(--ink))}
+.lines{display:flex;flex-direction:column;gap:10px}
+.cline{
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  font-family:var(--mono); font-size:14.5px;
+  border-top:1px solid color-mix(in srgb,var(--bg) 18%,var(--ink)); padding-top:12px;
+}
+.cline .lab{width:84px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in srgb,var(--bg) 60%,var(--ink))}
+.cline .val{user-select:all;word-break:break-all;flex:1;min-width:0}
+.cline a.val{text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--bg) 40%,var(--ink))}
+.copy{
+  font-family:var(--mono); font-size:12px; cursor:pointer;
+  background:transparent; color:var(--bg);
+  border:1px solid color-mix(in srgb,var(--bg) 35%,var(--ink)); border-radius:999px; padding:4px 12px;
+}
+.copy:hover{background:color-mix(in srgb,var(--bg) 12%,var(--ink))}
+
+footer{font-size:13px;color:var(--muted);max-width:52ch}
+
+/* ---------- Phone / tablet ---------- */
+@media (max-width: 920px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:0}
+  .side{position:static;height:auto;padding-block:48px 8px;gap:28px}
+  nav{display:none}
+  .side-foot{margin-top:0}
+  main{padding-block:40px 72px;gap:72px}
+}
+@media (max-width: 560px){
+  .facts{grid-template-columns:minmax(0,1fr)}
+  .fact + .fact{border-left:0;border-top:1px solid var(--line);padding-left:0}
+  .fact{padding:14px 0}
+  .job{grid-template-columns:minmax(0,1fr);gap:6px;margin:0;padding:18px 0}
+  .job:hover{background:transparent}
+  .proj{padding:20px 18px}
+  .cs{grid-template-columns:minmax(0,1fr);gap:2px}
+  .cs dd{margin-bottom:8px}
+  .more{grid-template-columns:minmax(0,1fr)}
+  .sk{grid-template-columns:minmax(0,1fr);gap:4px}
+  .contact-card{padding:24px 20px}
+  .cline .lab{width:100%}
+}
+</style>
+
+</head>
+<body>
+<div class="shell">
+
+  <!-- ===== Identity column ===== -->
+  <aside class="side">
+    <div class="side-top">
+      <span class="status"><span class="dot" aria-hidden="true"></span><span>Status: <b>Available</b> · open to full stack roles</span></span>
+      <h1>Himanshu Sain</h1>
+      <p class="role">Full Stack Developer</p>
+      <p class="pitch">I build the software behind EV charging networks, battery swap stations and multi-tenant SaaS, from the Laravel API to the Flutter app in the driver's pocket.</p>
+    </div>
+
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#about" class="on"><span class="bar"></span>About</a></li>
+        <li><a href="#experience"><span class="bar"></span>Experience</a></li>
+        <li><a href="#projects"><span class="bar"></span>Projects</a></li>
+        <li><a href="#skills"><span class="bar"></span>Skills</a></li>
+        <li><a href="#contact"><span class="bar"></span>Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="side-foot">
+      <div class="row">
+        <a href="https://www.linkedin.com/in/himanshu-sain-778220150" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/t3himanshu" target="_blank" rel="noopener">GitHub</a>
+        <a href="#contact">hsain462@gmail.com</a>
+        <a href="Himanshu-Sain-CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+      </div>
+      <span class="where">Jaipur, India · IST (UTC+5:30) · Remote or on-site</span>
+    </div>
+  </aside>
+
+  <!-- ===== Work column ===== -->
+  <main>
+
+    <section id="about" aria-labelledby="about-h">
+      <p class="eyebrow">About</p>
+      <h2 id="about-h" class="sr">Four years shipping production systems, most of them for electric vehicles.</h2>
+      <p class="lede">I started in 2022 as a web developer intern building client sites in PHP and WordPress. Today I lead full stack work at <strong>Codenius Tech</strong>, where I design and ship platforms that real charge-point operators and battery-swap stations run their business on.</p>
+      <p class="muted">My niche is the part most developers never touch: talking to hardware. I wrote the OCPP WebSocket server that EV chargers connect to, a Go service that streams school CCTV cameras to parents' phones, and the bridge that pulls punches from ZKTeco biometric devices. Around that I build the usual full stack: Laravel, NestJS and Node APIs, MySQL and PostgreSQL schemas, Flutter apps with Firebase push, Docker deploys. I also run AI models myself: offline speech recognition, a fine-tuned Qwen model, and a coding agent that works through tasks for my team.</p>
+
+      <div class="facts" role="list">
+        <div class="fact" role="listitem"><span class="n">4+</span><span class="l">years in production since Jun 2022</span></div>
+        <div class="fact" role="listitem"><span class="n">10</span><span class="l">live products you can open today</span></div>
+        <div class="fact" role="listitem"><span class="n">15+</span><span class="l">Flutter apps built or co-built</span></div>
+      </div>
+
+      <div class="log" aria-label="Example OCPP message flow from a charging session">
+<span class="t">10:42:07</span>  <span class="k">BootNotification</span>        CP-JPR-014        → <span class="ok">Accepted</span>
+<span class="t">10:42:31</span>  <span class="k">Authorize</span>               idTag 04A1…F2     → <span class="ok">Accepted</span>
+<span class="t">10:42:33</span>  <span class="k">StartTransaction</span>        connector 1       → <span class="v">txn 88213</span>
+<span class="t">10:57:33</span>  <span class="k">MeterValues</span>             <span class="v">SoC 62%  ·  7.4 kW  ·  1.86 kWh</span>
+<span class="t">10:57:34</span>  <span class="k">FCM push</span>                driver app        → <span class="v">"62% charged, ~38 min left"</span></div>
+      <p class="cap">A charging session as Easy Charger CPMS sees it: charger ↔ my OCPP server ↔ Flutter driver app. Illustrative values.</p>
+    </section>
+
+    <section id="experience" aria-labelledby="exp-h">
+      <p class="eyebrow">Experience</p>
+      <h2 id="exp-h">Where I've worked</h2>
+      <ol class="jobs">
+        <li class="job">
+          <span class="when">Dec 2024 —<br>Present</span>
+          <div class="job-body">
+            <h3>Full Stack Developer</h3>
+            <span class="co">Codenius Tech Pvt. Ltd.</span>
+            <ul>
+              <li>Lead developer of Easy Charger CPMS (212 of 244 backend commits): my own OCPP 1.6 / 2.0.1 WebSocket server, OCPI 2.2.1 roaming, tariffs, wallets and partner payouts, plus white-label driver apps built per client by GitHub Actions.</li>
+              <li>Built Skoolioo, a school ERP (Laravel 13, Reverb, Flutter) with live bus tracking, Razorpay fees and a Go agent that streams CCTV cameras to parents.</li>
+              <li>Core contributor to Staffioo HRMS: payroll, ZKTeco biometric sync, geo-fenced attendance and an on-device face-recognition kiosk.</li>
+              <li>Main backend developer for Power Pulse Energy's ERP: warehouse QC and bill of materials, dealer purchase orders, battery IoT telemetry.</li>
+              <li>Built Cohesco, a project management SaaS whose AI coding agent (Claude Agent SDK) works tasks on a developer's machine and waits for human approval before any commit.</li>
+              <li>Ship with Docker, Caddy, GitHub Actions and S3 backups; review code and run releases for the team.</li>
+            </ul>
+            <ul class="tags"><li>Laravel</li><li>Flutter</li><li>OCPP</li><li>Go</li><li>NestJS</li><li>Firebase</li><li>Docker</li><li>LLMs</li></ul>
+          </div>
+        </li>
+        <li class="job">
+          <span class="when">Jun 2023 —<br>Nov 2024</span>
+          <div class="job-body">
+            <h3>Web Developer</h3>
+            <span class="co">Girthiee Innovation Pvt. Ltd.</span>
+            <ul>
+              <li>Developed and maintained dynamic web applications in PHP, Laravel, JavaScript and MySQL.</li>
+              <li>Built custom WordPress themes and plugins, customised OpenCart stores, and designed normalised MySQL schemas.</li>
+              <li>Integrated third-party REST APIs and supported data migrations in an Agile, Git-based team.</li>
+            </ul>
+            <ul class="tags"><li>PHP</li><li>Laravel</li><li>MySQL</li><li>WordPress</li><li>OpenCart</li></ul>
+          </div>
+        </li>
+        <li class="job">
+          <span class="when">Jun 2022 —<br>Jun 2023</span>
+          <div class="job-body">
+            <h3>Web Developer <span class="muted" style="font-weight:500">· Intern → Full-time</span></h3>
+            <span class="co">Unso Digital Pvt. Ltd.</span>
+            <ul>
+              <li>Joined as an intern and was promoted to full-time Web Developer after six months.</li>
+              <li>Built and maintained client websites and web apps with PHP, Laravel, CakePHP and WordPress.</li>
+            </ul>
+            <ul class="tags"><li>PHP</li><li>CakePHP</li><li>Laravel</li><li>WordPress</li></ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="projects" aria-labelledby="proj-h">
+      <p class="eyebrow">Selected projects</p>
+      <h2 id="proj-h">Things I've built that people use every day</h2>
+      <p class="muted">Most of this is client work in private repositories, so instead of source links you get the live product and an honest note on my role.</p>
+
+      <div class="projects">
+        <article class="proj">
+          <div class="proj-head"><h3>Easy Charger CPMS</h3><span class="domain">EV charging · White-label SaaS</span></div>
+          <div class="proj-meta"><span class="role-chip">Lead developer</span><a class="live" href="https://cpms.easycharger.in" target="_blank" rel="noopener">cpms.easycharger.in</a></div>
+          <dl class="cs">
+            <dt>Problem</dt><dd>Charge-point operators needed one system to control chargers from different brands, bill drivers, pay site hosts, and roam with other networks, under their own brand.</dd>
+            <dt>Built</dt><dd>A charge-point management system with my own OCPP WebSocket server (Workerman / ReactPHP), OCPI roaming, a tariff engine, wallets and Razorpay, host and investor payouts, RFID, bookings, firmware updates and load limits. Each operator gets a branded Flutter driver app, generated by a GitHub Actions pipeline, with iOS Live Activities showing charge progress on the lock screen.</dd>
+            <dt>Stack</dt><dd>Laravel 11 · Flutter · OCPP · OCPI · Pusher · S3 · GitHub Actions</dd>
+          </dl>
+          <div class="readings"><span>protocols <b>OCPP 1.6 + 2.0.1 · OCPI 2.2.1</b></span><span>backend <b>98 models · 450+ routes</b></span><span>app <b>76 screens</b></span></div>
+          <figure class="shot">
+            <a href="https://easycharger.in" target="_blank" rel="noopener"><img src="shots/ecstore.jpg" alt="Easy Charger storefront homepage with an SUV plugged into a DC fast charger" loading="lazy" width="960" height="600"></a>
+            <figcaption>easycharger.in, the client's storefront, which I also built (Laravel 12, Razorpay)</figcaption>
+          </figure>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head"><h3>Skoolioo School ERP</h3><span class="domain">EdTech · SaaS · Hardware</span></div>
+          <div class="proj-meta"><span class="role-chip">Lead developer</span><a class="live" href="https://school.codeniustech.com" target="_blank" rel="noopener">school.codeniustech.com</a></div>
+          <dl class="cs">
+            <dt>Problem</dt><dd>Schools ran admissions, fees, transport and parent updates on separate tools, and parents had no window into the school day.</dd>
+            <dt>Built</dt><dd>One platform for admissions, attendance, exams, fees with Razorpay, live bus tracking, library, hostel and payroll, with a parent and teacher app. I also wrote a Go service that runs on the school's PC, finds Hikvision / Dahua / CP Plus cameras over ONVIF, and streams to parents only while someone is watching.</dd>
+            <dt>Stack</dt><dd>Laravel 13 · Reverb · Flutter · Go · MediaMTX · Docker</dd>
+          </dl>
+          <div class="readings"><span>backend <b>144 models · 46 test files</b></span><span>realtime <b>WebSockets + GPS</b></span><span>runs on <b>server or Raspberry Pi</b></span></div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head"><h3>Staffioo HRMS</h3><span class="domain">HR &amp; payroll SaaS</span></div>
+          <div class="proj-meta"><span class="role-chip">Core contributor · team of 4+</span><a class="live" href="https://staffioo.in" target="_blank" rel="noopener">staffioo.in</a></div>
+          <dl class="cs">
+            <dt>Problem</dt><dd>Indian companies with field staff needed attendance they could trust and payroll that handles TDS, loans and final settlements.</dd>
+            <dt>Built</dt><dd>With the team: multi-company HR SaaS with geo-fenced and biometric attendance (ZKTeco devices), approval workflows, a payroll engine and salary payouts. I built a face-recognition kiosk app that matches faces on the device (MobileFaceNet with anti-spoofing) and syncs punches offline-first.</dd>
+            <dt>Stack</dt><dd>Laravel 12 · Flutter · ML Kit / TFLite · Razorpay · Shorebird</dd>
+          </dl>
+          <div class="readings"><span>backend <b>150+ models · 800+ routes</b></span><span>app <b>80+ screens</b></span><span>hardware <b>ZKTeco biometric</b></span></div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head"><h3>Power Pulse Energy ERP</h3><span class="domain">Battery manufacturing · IoT</span></div>
+          <div class="proj-meta"><span class="role-chip">Main backend developer</span><a class="live" href="https://powerpulseenergy.com" target="_blank" rel="noopener">powerpulseenergy.com</a></div>
+          <dl class="cs">
+            <dt>Problem</dt><dd>A lithium battery maker tracked raw material, quality checks, dealer orders and field sales on paper and spreadsheets.</dd>
+            <dt>Built</dt><dd>A warehouse system with supplier quotes, multi-stage QC, bill-of-materials production and battery IoT telemetry; a dealer purchase-order backend with warranties and invoices; and backend work on a NestJS field-sales tracker and a battery warranty service app.</dd>
+            <dt>Stack</dt><dd>Laravel 12 · NestJS · Prisma · PostgreSQL · Flutter · Pusher</dd>
+          </dl>
+          <div class="readings"><span>systems <b>4 connected apps</b></span><span>warehouse <b>130 migrations</b></span><span>users <b>6 role dashboards</b></span></div>
+          <figure class="shot">
+            <a href="https://powerpulseenergy.com" target="_blank" rel="noopener"><img src="shots/powerpulse.jpg" alt="Power Pulse Energy homepage showing a solar battery in front of solar panels" loading="lazy" width="960" height="600"></a>
+            <figcaption>The client: Power Pulse Energy, lithium batteries for EVs, inverters and solar</figcaption>
+          </figure>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head"><h3>Cohesco + AI coding agent</h3><span class="domain">Project management · AI agents</span></div>
+          <div class="proj-meta"><span class="role-chip">Sole developer</span></div>
+          <dl class="cs">
+            <dt>Problem</dt><dd>Our team wanted routine tickets done by an AI agent, without handing it the keys to production.</dd>
+            <dt>Built</dt><dd>A multi-tenant project management SaaS (sprints, dependencies, time tracking, realtime updates) with a built-in coding agent. A task goes to Claude Code on a paired developer Mac through a TypeScript bridge that only dials out. The agent works on its own branch, runs checks, takes screenshots, and nothing is committed until a person approves it in the web app.</dd>
+            <dt>Stack</dt><dd>Laravel 12 · Reverb · Flutter · TypeScript · Claude Agent SDK</dd>
+          </dl>
+        </article>
+
+        <article class="proj">
+          <div class="proj-head"><h3>Flow voice typing</h3><span class="domain">AI · Speech · Native mobile</span></div>
+          <div class="proj-meta"><span class="role-chip">Developer</span></div>
+          <dl class="cs">
+            <dt>Problem</dt><dd>Typing in Hindi, Tamil or Telugu on a phone is slow, and cloud dictation sends your voice to someone else's server.</dd>
+            <dt>Built</dt><dd>Speak in six Indian languages and the text appears at your cursor, translated and rewritten in the tone you pick. Speech recognition runs offline on the phone with whisper.cpp (Android floating mic, iOS keyboard extension). Translation and rewriting run on my own server with NLLB-200 and Qwen3, small enough for a Raspberry Pi.</dd>
+            <dt>Stack</dt><dd>Kotlin · SwiftUI · Flutter · whisper.cpp · FastAPI · llama.cpp</dd>
+          </dl>
+        </article>
+      </div>
+
+      <p class="group-h">More work</p>
+      <div class="more">
+        <div class="mini">
+          <h4>Super App SSO + Vault</h4>
+          <p>One login for our product suite: JWT/JWKS identity provider, TOTP, back-channel logout, and a secrets vault that fails closed.</p>
+          <div class="mini-foot"><span class="stack">Laravel · libsodium · Flutter · Caddy</span></div>
+        </div>
+        <div class="mini">
+          <h4>Health Checker</h4>
+          <p>Agentless server monitoring over SSH with root-cause rules, disk-full forecasts, alerting and a Claude assistant.</p>
+          <div class="mini-foot"><span class="stack">TypeScript · Fastify · BullMQ · React 19</span></div>
+        </div>
+        <div class="mini">
+          <h4>UPSC / RAS AI tutor</h4>
+          <p>Bilingual exam-prep app with a RAG tutor that cites sources and a LoRA fine-tuned Qwen model that runs offline.</p>
+          <div class="mini-foot"><span class="stack">Laravel · Flutter · FastAPI · Qdrant · MLX</span></div>
+        </div>
+        <div class="mini">
+          <h4>easycharger.in store</h4>
+          <p>E-commerce for EV chargers: Razorpay webhooks, pincode checks, invoices, ROI calculator and schema-based SEO.</p>
+          <div class="mini-foot"><span class="stack">Laravel 12 · Razorpay</span><a class="live" href="https://easycharger.in" target="_blank" rel="noopener">easycharger.in</a></div>
+        </div>
+        <div class="mini">
+          <h4>Codenius Society</h4>
+          <p>Apartment society management: maintenance bills, online payments, visitor logs, polls and amenity booking.</p>
+          <div class="mini-foot"><span class="stack">Laravel 12 · Flutter · 2FA</span><a class="live" href="https://society.codeniustech.com" target="_blank" rel="noopener">society.codeniustech.com</a></div>
+        </div>
+        <div class="mini">
+          <h4>Syscoest restaurant POS</h4>
+          <p>Tables, kitchen tickets, shifts, recipes and stock for restaurants, with PIN login per staff role. Team project.</p>
+          <div class="mini-foot"><span class="stack">Laravel 13 · Flutter</span><a class="live" href="https://pos.codeniustech.com" target="_blank" rel="noopener">pos.codeniustech.com</a></div>
+        </div>
+        <div class="mini">
+          <figure class="shot"><a href="https://app.batterybank.in" target="_blank" rel="noopener"><img src="shots/batterybank.jpg" alt="Battery Bank homepage with e-rickshaws at a battery swap station" loading="lazy" width="960" height="600"></a></figure>
+          <h4>Battery Bank</h4>
+          <p>Battery swapping for e-rickshaw drivers: QR and NFC battery IDs, driver face check, wallet and partner revenue share. Team project.</p>
+          <div class="mini-foot"><span class="stack">Laravel · Flutter · NFC</span><a class="live" href="https://app.batterybank.in" target="_blank" rel="noopener">app.batterybank.in</a></div>
+        </div>
+        <div class="mini">
+          <h4>Invoicer</h4>
+          <p>GST invoices and purchase orders with Google sign-in, PDF export and WhatsApp sharing.</p>
+          <div class="mini-foot"><span class="stack">Next.js 16 · Supabase</span><a class="live" href="https://invoices.codeniustech.com" target="_blank" rel="noopener">invoices.codeniustech.com</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="sk-h">
+      <p class="eyebrow">Skills</p>
+      <h2 id="sk-h">What I work with</h2>
+      <dl class="skills">
+        <div class="sk"><dt>Backend</dt><dd>Laravel, PHP, Node.js, NestJS, Fastify, Go, FastAPI, Flask, REST APIs, WebSockets (Reverb, Pusher)</dd></div>
+        <div class="sk"><dt>Mobile</dt><dd>Flutter, Dart, GetX, Riverpod, Firebase / FCM, ML Kit, Shorebird; some Kotlin and SwiftUI</dd></div>
+        <div class="sk"><dt>EV / IoT</dt><dd>OCPP 1.6 &amp; 2.0.1, OCPI 2.2.1, battery swapping, BMS telemetry (SOC, SOH), ZKTeco biometrics, ONVIF / RTSP cameras, QR and NFC</dd></div>
+        <div class="sk"><dt>AI / ML</dt><dd>Claude Agent SDK, GPT, Gemini, Ollama, RAG with Qdrant, LoRA fine-tuning, whisper.cpp, llama.cpp, OpenCV, TFLite</dd></div>
+        <div class="sk"><dt>Data &amp; DevOps</dt><dd>MySQL, PostgreSQL, Prisma, Redis / BullMQ, Supabase, Docker, Caddy, GitHub Actions, AWS S3</dd></div>
+        <div class="sk"><dt>Payments</dt><dd>Razorpay (checkout, webhooks, payouts), PhonePe, Stripe, GST invoicing</dd></div>
+        <div class="sk"><dt>Frontend</dt><dd>JavaScript, TypeScript, React, Next.js, Tailwind CSS, Alpine, GSAP</dd></div>
+        <div class="sk"><dt>CMS</dt><dd>WordPress, OpenCart</dd></div>
+      </dl>
+
+      <div class="edu">
+        <p class="eyebrow">Education</p>
+        <div class="edu-row"><span><strong>Bachelor of Technology</strong> · Rajasthan Technical University</span><span>2018 – 2022</span></div>
+        <div class="edu-row"><span><strong>Senior Secondary</strong> · Board of Secondary Education</span><span>2016 – 2017</span></div>
+        <div class="edu-row"><span><strong>Languages</strong> · English (professional), Hindi (native)</span><span></span></div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="ct-h">
+      <div class="contact-card">
+        <h2 id="ct-h">Let's talk</h2>
+        <p>I'm looking for a full stack role where I can own features end to end. EV, energy and IoT teams especially, but I'm happy to talk about any product with real users.</p>
+        <div class="lines">
+          <div class="cline"><span class="lab">Email</span><span class="val" id="v-email">hsain462@gmail.com</span><button class="copy" type="button" data-copy="v-email">Copy</button></div>
+          <div class="cline"><span class="lab">Phone</span><span class="val" id="v-phone">+91 85599 44144</span><button class="copy" type="button" data-copy="v-phone">Copy</button></div>
+          <div class="cline"><span class="lab">LinkedIn</span><a class="val" href="https://www.linkedin.com/in/himanshu-sain-778220150" target="_blank" rel="noopener">linkedin.com/in/himanshu-sain-778220150</a></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>Designed and written by Himanshu Sain. Built as a single hand-written HTML page.</footer>
+  </main>
+</div>
+
+<style>.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}</style>
+<script>
+// Copy buttons
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var el = document.getElementById(btn.dataset.copy);
+    var text = el.textContent.trim();
+    var done = function(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = 'Copy'; }, 1600); };
+    var fallback = function(){
+      var r = document.createRange(); r.selectNodeContents(el);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Selected';
+      setTimeout(function(){ btn.textContent = 'Copy'; }, 1600);
+    };
+    try {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } catch(e){ fallback(); }
+  });
+});
+
+// Highlight current section in the nav
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav a'));
+  if (!('IntersectionObserver' in window) || !links.length) return;
+  var byId = {};
+  links.forEach(function(a){ byId[a.getAttribute('href').slice(1)] = a; });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){
+        links.forEach(function(a){ a.classList.remove('on'); });
+        var a = byId[en.target.id]; if (a) a.classList.add('on');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  document.querySelectorAll('main section[id]').forEach(function(s){ io.observe(s); });
+})();
+</script>
+
+</body>
+</html>
